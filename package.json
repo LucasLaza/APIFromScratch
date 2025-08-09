@@ -1,0 +1,28 @@
+{
+  "name": "api-teste-servico",
+  "version": "1.0.0",
+  "description": "API Rest para automação de testes na camada de serviço.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "api",
+    "express",
+    "swagger",
+    "testes",
+    "automacao"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10"
+  }
+}
