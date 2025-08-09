@@ -8,7 +8,7 @@ function transfer({ from, to, value }) {
   const sender = findUserByUsername(from);
   const recipient = findUserByUsername(to);
   if (!sender || !recipient) {
-    return { error: 'Usuário remetente ou destinatário não encontrado. HADOUKEN!' };
+    return { error: 'Usuário remetente ou destinatário não encontrado.' };
   }
   if (sender.saldo < value) {
     return { error: 'Saldo insuficiente.' };
