@@ -6,10 +6,10 @@ const app = require('../../app.js');
 
 const transferService = require('../../service/transferService')
 
-describe('Transfer Controller', () => {
+describe('Transfer External', () => {
     describe('POST /transfer', () => {
         it('Destinatário inexistente retorna 400', async () => {
-            const resposta = await request(app)
+            const resposta = await request('http://localhost:3000')
                 .post('/transfer')
                 .send({
                     from: "Lucas",
@@ -26,7 +26,7 @@ describe('Transfer Controller', () => {
             const transferServiceMock = sinon.stub(transferService, 'transfer')
             transferServiceMock.returns({ error: 'Usuário remetente ou destinatário não encontrado.' })
             
-            const resposta = await request(app)
+            const resposta = await request('http://localhost:3000')
                 .post('/transfer')
                 .send({
                     from: "Lucas",
