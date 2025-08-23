@@ -3,7 +3,7 @@ const userController = require('./controller/userController');
 const transferController = require('./controller/transferController');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
-const { authenticateToken } = require('../service/authService');
+const { authenticateToken } = require('./service/authService');
 
 const app = express();
 app.use(express.json());

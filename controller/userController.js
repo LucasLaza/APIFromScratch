@@ -63,7 +63,8 @@ const register = (req, res) => {
 const login = (req, res) => {
   const result = userService.loginUser(req.body);
   if (result.error) return res.status(401).json({ error: result.error });
-  res.json(result.user);
+  // Retorna o token junto com o usuário
+  res.json({ user: result.user, token: result.token });
 };
 
 const list = (req, res) => {
