@@ -1,0 +1,6 @@
+{
+  "username": "Lucas",
+  "password": "123456",
+  "saldo": 10000,
+  "favorecidos": ["Cris"]
+}
