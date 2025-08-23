@@ -3,6 +3,7 @@ const userController = require('./controller/userController');
 const transferController = require('./controller/transferController');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
+const { authenticateToken } = require('../service/authService');
 
 const app = express();
 app.use(express.json());
@@ -29,6 +30,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.post('/register', userController.register);
 app.post('/login', userController.login);
 app.get('/users', userController.list);
-app.post('/transfer', transferController.transfer);
+app.post('/transfer', authenticateToken, transferController.transfer);
 
 module.exports = app;

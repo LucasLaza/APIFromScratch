@@ -21,6 +21,8 @@
  *         description: Transferência realizada
  *       400:
  *         description: Erro na transferência
+ *     security:
+ *       - bearerAuth: []
  */
 
 const transferService = require('../service/transferService');
@@ -35,3 +37,13 @@ const transfer = (req, res) => {
 module.exports = {
   transfer
 };
+
+/**
+ * @swagger
+ * components:
+ *   securitySchemes:
+ *     bearerAuth:
+ *       type: http
+ *       scheme: bearer
+ *       bearerFormat: JWT
+ */

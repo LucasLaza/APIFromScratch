@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "API Rest para automação de testes na camada de serviço.",
   "main": "server.js",
-"scripts": {
+  "scripts": {
     "test": "mocha 'test/**/*.test.js' --timeout 10000",
     "test-external": "mocha 'test/external/**/*.test.js' --timeout 10000",
     "test-controller": "mocha 'test/controller/**/*.test.js' --timeout 10000",
@@ -21,6 +21,7 @@
   "dependencies": {
     "chai": "^5.2.1",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "mocha": "^11.7.1",
     "sinon": "^21.0.0",
     "supertest": "^7.1.4",

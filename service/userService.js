@@ -1,4 +1,6 @@
 const { findUserByUsername, addUser } = require('../model/userModel');
+const jwt = require('jsonwebtoken');
+const { SECRET } = require('../service/authService');
 
 function registerUser({ username, password, favorecidos = [] }) {
   if (!username || !password) {
@@ -17,7 +19,9 @@ function loginUser({ username, password }) {
   if (!user || user.password !== password) {
     return { error: 'Usuário ou senha inválidos.' };
   }
-  return { user };
+  // Gera o token JWT
+  const token = jwt.sign({ username: user.username }, SECRET, { expiresIn: '1h' });
+  return { user, token };
 }
 
 function listUsers() {
